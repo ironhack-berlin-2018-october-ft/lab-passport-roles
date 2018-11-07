@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Role</th>
+      {{#if isBoss}}
+        <th>Action</th>
+      {{/if}}
+    </tr>
+  </thead>
+  <tbody>
+    {{#each users}}
+      <tr>
+        <td>{{this.username}}</td>
+        <td>{{this.role}}</td>
+        {{#if ../isBoss}}
+          <td><a href="/users/{{this._id}}/delete">Delete</a></td>
+        {{/if}}
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

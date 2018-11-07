@@ -82,11 +82,9 @@ app.use((req,res,next) => {
 })
     
 
-const index = require('./routes/index');
-app.use('/', index);
-
-const authRoutes = require('./routes/auth');
-app.use('/auth', authRoutes);
+app.use('/', require('./routes/index'));
+app.use('/auth', require('./routes/auth'));
+app.use('/courses', require('./routes/courses'));
       
 
 module.exports = app;
